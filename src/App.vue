@@ -40,12 +40,29 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
+let touchstartX = 0
+let touchendX = 0
+
+function checkDirection() {
+  if (touchendX < touchstartX) showNextStep()
+  if (touchendX > touchstartX) showPreviousStep()
+}
+
+document.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+document.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  checkDirection()
+})
+
 </script>
 
 <template>
   <main class="main-container max-w-4xl m-auto h-full flex flex-col">
     <Header></Header>
-    <div class="flex items-center md:gap-20 flex-1 flex-col md:flex-row px-8">
+    <div class="flex items-center md:gap-20 flex-1 flex-col md:flex-row md:px-0 px-8">
       <Status :steps="maxSteps" :current-step="state.step"></Status>
       <AboutMe v-if="state.step==1" @nextStep="showNextStep" class="h-full"></AboutMe>
       <Skills v-if="state.step==2" @nextStep="showNextStep" class="h-full"></Skills>
@@ -53,7 +70,7 @@ document.addEventListener('keydown', function (event) {
       <Contact v-if="state.step==4" @nextStep="showNextStep" class="h-full"></Contact>
     </div>
   </main>
-  <div class="fixed bottom-0 pb-10 flex justify-center w-full bg-white bg-opacity-30">
+  <div class="fixed bottom-0 py-5 flex justify-center w-full bg-slate-50 bg-opacity-50">
       <CardNavigation :show-next="state.step!=maxSteps" :show-prev="state.step!=1" @nextStep="showNextStep"
                       @previousStep="showPreviousStep"></CardNavigation>
     </div>

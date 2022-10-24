@@ -27,7 +27,7 @@ watch(props, (newState, oldState) => {
 
 <template>
   <div class="flex justify-end">
-     <CircleProgress empty-color="" fill-color="#0d9488" :border-width="20" :border-fill-width="20" :size=180 :angle=45 :percent="state.percentage"></CircleProgress>
+     <CircleProgress empty-color="" fill-color="#0d9488" :border-width="20" :border-fill-width="20" :size=280 :angle=45 :percent="state.percentage"></CircleProgress>
   </div>
 </template>
 
