@@ -1,10 +1,8 @@
 <script setup>
-
 </script>
 
 <template>
-  <main class="main-container">
-  </main>
+
 </template>
 
 <style scoped>
