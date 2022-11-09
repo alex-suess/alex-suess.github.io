@@ -3,8 +3,8 @@ import CardHeader from './textComponents/CardHeader.vue'
 </script>
 
 <template>
-  <div class="flex flex-col justify-center">
-   <CardHeader text="Call me (maybe)"></CardHeader>
+  <div class="flex flex-col mt-40">
+   <CardHeader text="Call me"></CardHeader>
     <div class="mb-4">
       <h5 class="text-sm uppercase tracking-wider font-semibold text-teal-600">phone</h5>
       <p>+49 176 609 838 74</p>
