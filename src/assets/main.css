@@ -5,7 +5,60 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --page-content-width: 450px;
+}
 
 body {
     font-family: 'Archivo', sans-serif;
+}
+
+.profile-image {
+    background-image: url("../public/profile_image.jpg");
+    background-size: cover;
+}
+
+.shaking {
+    animation: tilt-shaking 0.2s;
+}
+
+.shaking-long {
+    animation: tilt-shaking 0.15s;
+    animation-iteration-count: 5;
+}
+
+@keyframes tilt-shaking {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(0.5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-0.5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.page-content {
+    width: var(--page-content-width);
+}
+
+.page-container {
+    scroll-snap-type: x mandatory;
+    scroll-snap-points-x: repeat(var(--page-content-width));
+}
+
+.page {
+    width: var(--page-content-width);
+    scroll-snap-align: start;
+}
+
+.content-container {
+    width: var(--page-content-width);
 }

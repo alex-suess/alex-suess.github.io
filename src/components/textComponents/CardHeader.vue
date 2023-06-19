@@ -9,7 +9,10 @@ const props = defineProps({
 </script>
 
 <template>
-  <h2 style="font-size: 128px;" class="font-semibold mb-12 text-sky-800 uppercase leading-none tracking-wider">{{ props.text }}</h2>
+  <h2 class="font-semibold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-pink-600 to-sky-600
+  uppercase leading-none tracking-wider lg:text-7xl text-6xl">
+    {{ props.text }}
+  </h2>
 </template>
 
 <style scoped>
